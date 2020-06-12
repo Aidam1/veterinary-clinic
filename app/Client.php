@@ -10,4 +10,9 @@ class Client extends Model
     {
         return $this->hasMany('App\Pet');
     }
+
+    public function visits()
+    {
+        return $this->hasMany('App\Visit');
+    }
 }

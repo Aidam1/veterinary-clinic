@@ -27,3 +27,9 @@ Route::get('/clients/create', 'ClientController@create')->name('clients.create')
 Route::post('/clients', 'ClientController@store')->name('clients.store');
 Route::get('/clients/{client_id}/edit', 'ClientController@edit')->where('client_id', '[0-9]+')->name('clients.edit');
 Route::put('/clients/{client_id}', 'ClientController@update')->where('client_id', '[0-9]+')->name('clients.update');
+
+
+Route::get('/pets/create', 'PetController@create')->name('pets.create');
+Route::post('/pets', 'PetController@store')->name('pets.store');
+Route::get('/pets/{pet_id}/edit', 'PetController@edit')->where('pet_id', '[0-9]+')->name('pets.edit');
+Route::put('/pets/{client_id}', 'PetController@update')->where('client_id', '[0-9]+')->name('pets.update');

@@ -5,7 +5,7 @@
 @foreach ($clients as $client)
 <div class="client">
 <p>{{$client->first_name}} {{ $client->last_name }}</p>
-<a href="{{route('clients.show', [$client->id])}}">Edit</a>
+<a href="{{route('clients.show', [$client->id])}}">See details</a>
 <p>Pets:</p>
   @foreach ($client->pets as $pet)
     <p><strong>{{$pet->name}}</strong></p>

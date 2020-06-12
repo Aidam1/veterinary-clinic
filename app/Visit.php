@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Pet extends Model
+class Visit extends Model
 {
     public function client()
     {
         return $this->belongsTo('App\Client');
     }
 
-    public function visits()
+    public function pet()
     {
-        return $this->hasMany('App\Visit');
+        return $this->belongsTo('App\Pet');
     }
 }
