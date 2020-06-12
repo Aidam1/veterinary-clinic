@@ -32,4 +32,10 @@ Route::put('/clients/{client_id}', 'ClientController@update')->where('client_id'
 Route::get('/pets/create', 'PetController@create')->name('pets.create');
 Route::post('/pets', 'PetController@store')->name('pets.store');
 Route::get('/pets/{pet_id}/edit', 'PetController@edit')->where('pet_id', '[0-9]+')->name('pets.edit');
-Route::put('/pets/{client_id}', 'PetController@update')->where('client_id', '[0-9]+')->name('pets.update');
+Route::put('/pets/{pet_id}', 'PetController@update')->where('pet_id', '[0-9]+')->name('pets.update');
+
+Route::get('/visits/{visit_id}', 'VisitController@show')->where('visit_id', '[0-9]+')->name('visits.show');
+Route::get('/visits/create', 'VisitController@create')->name('visits.create');
+Route::post('/visits', 'VisitController@store')->name('visits.store');
+Route::get('/visits/{visit_id}/edit', 'VisitController@edit')->where('visit_id', '[0-9]+')->name('visits.edit');
+Route::put('/visits/{visit_id}', 'VisitController@update')->where('visit_id', '[0-9]+')->name('visits.update');

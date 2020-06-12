@@ -10,8 +10,9 @@
 <p>Phone number: {{$client->phone_number}}</p>
 <hr>
  @foreach ($client->pets as $pet)
- <a href="{{route('pets.edit', [$pet->id])}}">Edit</a>
     <p><strong>{{$pet->name}}</strong></p>
+    <a href="{{route('pets.show', [$pet->id])}}">See details</a>
+    <a href="{{route('pets.edit', [$pet->id])}}">Edit</a>
     <p>Breed: {{$pet->breed}}</p>
     <p>Age: {{$pet->age}}</p>
     <p>Weight: {{$pet->weigth}}</p>
