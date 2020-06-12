@@ -19,7 +19,7 @@ foreach ($data as $client) {
     $first_name = $client['first_name'];
     $last_name = $client['surname'];
     $client_id = DB::getPdo()->lastInsertId();
-    
+
     insert($query, [$first_name, $last_name]);
     foreach($client['pets'] as $pet){
         $name = $pet['name'];
