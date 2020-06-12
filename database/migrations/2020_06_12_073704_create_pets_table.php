@@ -15,7 +15,7 @@ class CreatePetsTable extends Migration
     {
         Schema::create('pets', function (Blueprint $table) {
             $table->id();
-            $table->text('species');
+            $table->text('species')->nullable();
             $table->text('breed');
             $table->smallInteger('age');
             $table->double('weight');
