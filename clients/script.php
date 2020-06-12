@@ -15,9 +15,11 @@ $data = json_decode(file_get_contents('clients.json'), true);
 $query = 'INSERT INTO `clients` (`first_name`, `last_name`) VALUES (?,?)';
 $query2 = 'INSERT INTO `pets` (`name`, `breed`, `weight`, `age`, `image`, `client_id`) VALUES (?,?,?,?,?,?)';
 
-foreach ($data as $key=>$client) {
+foreach ($data as $client) {
     $first_name = $client['first_name'];
     $last_name = $client['surname'];
+    $client_id = DB::getPdo()->lastInsertId();
+    
     insert($query, [$first_name, $last_name]);
     foreach($client['pets'] as $pet){
         $name = $pet['name'];
@@ -25,7 +27,6 @@ foreach ($data as $key=>$client) {
         $weight = $pet['weight'];
         $age = $pet['age'];
         $image = $pet['photo'];
-        $client_id = $key+1;
         insert($query2, [$name, $breed, $weight, $age, $image,$client_id]);
 
     }
