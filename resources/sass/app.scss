@@ -1,3 +1,16 @@
 html{
   font-family:Arial, Helvetica, sans-serif ;
 }
+
+.home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('images/unnamed.jpg');
+}
+
+h1{
+  font-size: 3em;
+  color: rgb(42, 125, 146);
+}

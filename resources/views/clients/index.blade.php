@@ -2,8 +2,9 @@
 
 @section('content')
 
-
-  <h1> Home </h1>
+  <div class="home">
+    
+  <h1> Veterinary-Clinic </h1>
   <form method="GET" action="clients\search">
     @csrf
   <label>
@@ -14,5 +15,6 @@
   
   <input type="submit" value="search"> 
 </form>
+</div>
 
 @endsection
