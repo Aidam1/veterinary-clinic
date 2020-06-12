@@ -36,6 +36,7 @@ class ClientController extends Controller
         $this->validate($request, [
             'first_name' =>'required|min:4',
             'last_name' =>'required|min:4',
+            'email'=> 'required|email'
         ]);
         
         $client = new Client();
@@ -59,6 +60,9 @@ class ClientController extends Controller
         $this->validate($request, [
             'first_name' =>'required|min:4',
             'last_name' =>'required|min:4',
+            'email'=> 'required|email'
+
+
         ]);
         
         $client = Client::findOrFail($client_id);

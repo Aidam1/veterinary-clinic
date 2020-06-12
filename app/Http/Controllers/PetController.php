@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pet;
+use App\Visit;
 
 class PetController extends Controller
 {
     public function show($pet_id)
     {   
         $pet = Pet::with('visits')->findOrFail($pet_id);
-        return view('pets.show', compact('pet'));
+        $visit = new Visit();
+        $visit->client_id = $pet->client_id;
+        $visit->pet_id = $pet->id;
+        return view('pets.show', compact('pet', 'visit'));
     }
 
 
@@ -22,7 +26,7 @@ class PetController extends Controller
         $this->validate($request, [
             'name' =>'required',
             'breed' =>'required',
-            'age' =>'required',
+            'age' =>'required|integer',
             'weight' =>'required',
         
         ]);
