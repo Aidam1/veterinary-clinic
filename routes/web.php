@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/clients', 'ClientController@index')->name('clients.index');
+Route::get('/clients/search', 'ClientController@search')->name('clients.search');
+
+Route::get('/clients/{client_id}', 'ClientController@show')->where('client_id', '[0-9]+');
+

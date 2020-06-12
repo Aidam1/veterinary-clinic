@@ -3,7 +3,7 @@
 require_once('./DB.php');
 require_once('./DB_functions.php');
 
-$success = connect('localhost', 'veterinary-clinic', 'root', 'rootroot');
+$success = connect('localhost', 'laravel_veterinary_clinic', 'root', 'rootroot');
 
 DB::statement('TRUNCATE TABLE `clients`');
 DB::statement('TRUNCATE TABLE `pets`');
